@@ -1,7 +1,19 @@
 @import-normalize;
 
+@font-face {
+    font-family: 'SourceSansProRegular';
+    src: local('SourceSansPro'), url(./Fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: local('SourceSansPro'), url(./Fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
+}
+
 body {
     margin: 0;
+    font-family: 'SourceSansProRegular';
+    font-weight: 400;
 }
 
 .container {
