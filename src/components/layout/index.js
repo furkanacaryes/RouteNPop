@@ -1,10 +1,18 @@
-import React from "react";
+import * as React from 'react';
+import Nav from '../Nav';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
 
-export default function Layout() {
-  return (
-      <header>
-          <div className="brand"></div>
-          {/* <Nav></Nav> */}
-      </header>
-  );
-}
+const Layout = props => (
+	<>
+		<header>
+			<div className="brand">
+				<Logo />
+			</div>
+			<Nav></Nav>
+		</header>
+
+		<main>{props.children}</main>
+	</>
+);
+
+export default Layout;

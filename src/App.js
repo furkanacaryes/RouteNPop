@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.scss';
 import { Router } from '@reach/router';
-import Layout from './components/layout';
+import Layout from './components/Layout';
 
-function App() {
-  return (
-    <Router>
-      <Layout path="/">
-        {/* pages here */}
-      </Layout>
-    </Router>
-  );
-}
+const App = () => (
+	<Router>
+		<Layout path="/">{/* pages here */}</Layout>
+	</Router>
+);
 
 export default App;
