@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.scss';
 import { Router } from '@reach/router';
-import Layout from './components/Layout';
+import './App.scss';
+import Layout from './Components/Layout';
 
 const App = () => (
 	<Router>

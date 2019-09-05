@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.scss';
 import Nav from '../Nav';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../Assets/Logo.png';
 
 const Layout = props => (
 	<>
