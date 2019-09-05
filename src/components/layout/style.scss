@@ -1,0 +1,39 @@
+
+.topbar {
+    padding: 8px 0;
+    background-color: #001D30;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .lang-options {
+            color: #fff;
+        }
+    }
+}
+
+.navbar {
+    padding: 16px 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: Source Sans Pro;
+        font-weight: bold;
+        color: rgba(14, 39, 59, 0.5);
+        transition: color 0.2s ease;
+        padding: 0 8px;
+
+        &:hover,
+        &.active {
+            color: rgba(14, 39, 59, 1);
+        }
+    }
+}

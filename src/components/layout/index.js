@@ -1,14 +1,25 @@
 import * as React from 'react';
+import './style.scss';
 import Nav from '../Nav';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import Logo from '../../assets/Logo.png';
 
 const Layout = props => (
 	<>
 		<header>
-			<div className="brand">
-				<Logo />
+			<div className="topbar">
+				<div className="container">
+					<div className="brand">
+						<img src={Logo} alt="SmartOver Logo"></img>
+					</div>
+					<div className="lang-options">TR | EN</div>
+				</div>
 			</div>
-			<Nav></Nav>
+
+			<div className="navbar">
+				<div className="container">
+					<Nav></Nav>
+				</div>
+			</div>
 		</header>
 
 		<main>{props.children}</main>
