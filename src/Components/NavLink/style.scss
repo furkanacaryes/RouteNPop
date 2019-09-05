@@ -1,0 +1,20 @@
+
+.nav-link {
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: rgba(14, 39, 59, 0.5);
+        transition: color 0.2s ease;
+        padding: 0 24px;
+    
+        &:hover,
+        &.active {
+            color: rgba(14, 39, 59, 1);
+        }
+    }
+
+    &__sub {
+        display: none;
+    }
+}
