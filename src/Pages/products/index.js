@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 // import fetch from 'isomorphic-unfetch';
 import './style.scss';
+import Note from '../../Components/Note';
 
 const apiResponse = {
 	text:
@@ -30,58 +31,18 @@ const prepareData = ({ text, notes }) => ({
 });
 
 const Products = () => {
-	const [{ notes, splittedText }, setData] = useState({});
-
-	const [activeNote, setActiveNote] = useState();
-
-	const footNoteRef = useRef();
-
-	const getStatefulClass = noteIndex =>
-		activeNote === noteIndex ? 'active' : '';
+	const [data, setData] = useState({});
 
 	const getInitialProps = () =>
 		fetchPageData().then(data => setData(prepareData(data)));
 
-	const outsideClickListener = [
-		'click',
-		({ target }) => {
-			if (target !== footNoteRef.current) {
-				setActiveNote(null);
-			}
-		},
-	];
-
 	useEffect(() => {
 		getInitialProps();
-
-		document.addEventListener(...outsideClickListener);
-
-		return () => document.removeEventListener(...outsideClickListener);
-	}, [splittedText, outsideClickListener]);
+	}, [data.splittedText]);
 
 	return (
 		<section className="Products">
-			<div className="Note shadow-radius-box">
-				{splittedText &&
-					splittedText.map((partialText, i) => (
-						<div key={i} className="partial-text">
-							{partialText}
-							<div
-								className="foot-note"
-								ref={footNoteRef}
-								onClick={() => setActiveNote(i)}
-							>
-								<div
-									className={`pop-over shadow-radius-box ${getStatefulClass(
-										i,
-									)}`}
-								>
-									{notes[i]}
-								</div>
-							</div>
-						</div>
-					))}
-			</div>
+			<Note {...data} />
 		</section>
 	);
 };
