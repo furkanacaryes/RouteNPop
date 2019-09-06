@@ -14,9 +14,11 @@ const NavLink = ({ name, to, subLinks }) => (
 
 		{subLinks && (
 			<div className="nav-link__sub">
-				{subLinks.map((sub, i) => (
-					<NavLink {...sub} key={sub.name + i}></NavLink>
-				))}
+				<div className="nav-link__sub__inner">
+					{subLinks.map((sub, i) => (
+						<NavLink {...sub} key={sub.name + i}></NavLink>
+					))}
+				</div>
 			</div>
 		)}
 	</div>
