@@ -15,7 +15,7 @@ const apiResponse = {
 
 const FOOTNOTE_REGEXP = new RegExp(/\[[0-9]\]/g);
 
-const fetchPageData = () =>
+const fetchNote = () =>
 	// fetch('https://hastebin.com/wewumotepi.json').then(res => res.json());
 	Promise.resolve(apiResponse);
 
@@ -25,24 +25,24 @@ const alignNoteIndexes = (text, notes) =>
 		return notes[noteIndex];
 	});
 
-const prepareData = ({ text, notes }) => ({
+const prepareNote = ({ text, notes }) => ({
 	splittedText: text.split(FOOTNOTE_REGEXP),
 	notes: alignNoteIndexes(text, notes),
 });
 
 const Products = () => {
-	const [data, setData] = useState({});
+	const [note, setNote] = useState({});
 
 	const getInitialProps = () =>
-		fetchPageData().then(data => setData(prepareData(data)));
+		fetchNote().then(raw => setNote(prepareNote(raw)));
 
 	useEffect(() => {
 		getInitialProps();
-	}, [data.splittedText]);
+	}, [note.splittedText]);
 
 	return (
 		<section className="Products">
-			<Note {...data} />
+			<Note {...note} />
 		</section>
 	);
 };

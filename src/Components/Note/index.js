@@ -1,11 +1,18 @@
 import * as React from 'react';
+import './style.scss';
 
 class Note extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {};
+		this.state = {
+			note: '',
+		};
 	}
+
+	componentDidMount() {
+        
+    }
 
 	footNoteRef = React.createRef();
 
@@ -21,25 +28,26 @@ class Note extends React.Component {
 			this.state.activeNote === noteIndex ? 'active' : '',
 		].join(' ');
 
-	render() {
-		const { splittedText, notes } = this.props;
-
-		return (
-			splittedText &&
-			splittedText.map((partialText, i) => (
-				<div key={i} className="partial-text">
-					{partialText}
-					<div
-						className="foot-note"
-						ref={this.footNoteRef}
-						onClick={() => this.handleClick(i)}
-					>
-						<div className={this.getStatefulClass(i)}>
-							{notes[i]}
-						</div>
-					</div>
+	renderNote = ({ splittedText, notes }) =>
+		splittedText &&
+		splittedText.map((partialText, i) => (
+			<div key={i} className="partial-text">
+				{partialText}
+				<div
+					className="foot-note"
+					ref={this.footNoteRef}
+					onClick={() => this.handleClick(i)}
+				>
+					<div className={this.getStatefulClass(i)}>{notes[i]}</div>
 				</div>
-			))
+			</div>
+		));
+
+	render() {
+		return (
+			<div className="Note shadow-radius-box">
+				{this.renderNote(this.props)}
+			</div>
 		);
 	}
 }
