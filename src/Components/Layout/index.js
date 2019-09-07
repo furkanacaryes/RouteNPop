@@ -4,7 +4,7 @@ import Nav from '../Nav';
 import Logo from '../../Assets/Logo.png';
 
 const Layout = props => (
-	<>
+	<div className="Layout">
 		<header>
 			<div className="topbar">
 				<div className="container">
@@ -23,7 +23,7 @@ const Layout = props => (
 		</header>
 
 		<main>{props.children}</main>
-	</>
+	</div>
 );
 
 export default Layout;

@@ -1,22 +1,39 @@
 @import-normalize;
 
 @font-face {
-    font-family: 'SourceSansProRegular';
-    src: local('SourceSansPro'), url(./Fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
+	font-family: 'SourceSansProRegular';
+	src: local('SourceSansPro'),
+		url(./Fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'SourceSansProBold';
-    src: local('SourceSansPro'), url(./Fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
+	font-family: 'SourceSansProBold';
+	src: local('SourceSansPro'),
+		url(./Fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
 }
 
 body {
-    margin: 0;
-    font-family: 'SourceSansProRegular';
-    font-weight: 400;
+	margin: 0;
+	font-family: 'SourceSansProRegular';
+	font-weight: 400;
 }
 
+// Application-Wide Global Classes
+
 .container {
-    width: 960px;
-    margin: 0 auto;
+	width: 960px;
+	margin: 0 auto;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.shadow-radius-box {
+	padding: 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }

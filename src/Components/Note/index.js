@@ -17,8 +17,6 @@ class Note extends React.Component {
 				activeNoteRef: null,
 			});
 		}
-
-		console.log('Clicked!', target, this.state.activeNoteRef);
 	};
 
 	componentDidMount() {
@@ -35,12 +33,15 @@ class Note extends React.Component {
 			activeNoteRef: target,
 		});
 
-	getStatefulClass = noteIndex =>
-		[
-			'pop-over',
-			'shadow-radius-box',
-			this.state.activeNote === noteIndex ? 'active' : '',
-		].join(' ');
+	// getStatefulClass = noteIndex =>
+	// 	[
+	// 		'pop-over',
+	// 		'shadow-radius-box',
+	// 		this.state.activeNote === noteIndex ? 'active' : '',
+	// 	].join(' ');
+
+	isNoteActive = noteIndex =>
+		this.state.activeNote === noteIndex ? 'active' : '';
 
 	renderNote = ({ splittedText, notes }) =>
 		splittedText &&
@@ -49,12 +50,12 @@ class Note extends React.Component {
 				{partialText}
 				{notes[i] && (
 					<div
-						className="foot-note"
+						className={`foot-note ${this.isNoteActive(i)}`}
 						onClick={({ currentTarget: t }) =>
 							this.handleClick(t, i)
 						}
 					>
-						<div className={this.getStatefulClass(i)}>
+						<div className="pop-over shadow-radius-box">
 							{notes[i]}
 						</div>
 					</div>

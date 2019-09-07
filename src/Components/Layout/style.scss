@@ -1,19 +1,39 @@
 
-.topbar {
-    padding: 8px 0;
-    background-color: #001D30;
+.Layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    header {
+        position: relative;
+        z-index: 1;
 
-        .lang-options {
-            color: #fff;
+        .topbar {
+            padding: 8px 0;
+            background-color: #001D30;
+        
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        
+                .lang-options {
+                    color: #fff;
+                }
+            }
         }
     }
-}
 
-.navbar {
-    // padding: 16px 0;
+
+    main {
+        flex: 1;
+
+        > [role="group"] {
+            height: 100%;
+
+            > section {
+                min-height: 100%;
+            }
+        }
+    }
 }

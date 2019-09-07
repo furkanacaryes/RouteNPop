@@ -1,36 +1,45 @@
-
 .Note {
-    display: flex;
+	display: flex;
+	padding: 32px;
 
-    .partial-text {
-        display: flex;
+	.partial-text {
+		display: flex;
 
-        .foot-note {
-            position: relative;
-    
-            &::before {
-                content: '*';
-                cursor: pointer;
-            }
-    
-            .pop-over {
-                display: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-    
-                &.active {
-                    display: block;
-                }
-            }
-    
-        }
-    }
-}
+		.foot-note {
+			position: relative;
 
-.shadow-radius-box {
-    padding: 16px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+			&::before {
+				content: '*';
+				display: block;
+				cursor: pointer;
+				transition: transform 0.2s ease, color 0.2s ease;
+			}
+
+			.pop-over {
+				position: absolute;
+				top: 16px;
+				left: 0;
+				width: max-content;
+				max-width: 264px;
+				opacity: 0;
+				pointer-events: none;
+				transform: perspective(800px) translateZ(32px);
+				transition: transform 0.2s ease, opacity 0.2s ease;
+			}
+
+			&.active {
+
+				&::before {
+					transform: scale(1.5);
+					color: #0076d5;
+				}
+
+				.pop-over {
+					pointer-events: unset;
+					opacity: 1;
+					transform: perspective(800px) translateZ(0px);
+				}
+			}
+		}
+	}
 }

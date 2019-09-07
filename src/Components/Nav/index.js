@@ -20,7 +20,7 @@ const navLinks = [
 ];
 
 const Nav = () => (
-	<nav>
+	<nav className="flex-center">
 		{navLinks.map(({ ...props }, i) => (
 			<NavLink {...props} key={i}></NavLink>
 		))}

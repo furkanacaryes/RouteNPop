@@ -41,7 +41,7 @@ const Products = () => {
 	}, [note.splittedText]);
 
 	return (
-		<section className="Products">
+		<section className="Products flex-center">
 			<Note {...note} />
 		</section>
 	);
