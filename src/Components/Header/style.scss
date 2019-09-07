@@ -1,0 +1,21 @@
+@import '../../Styles/variables.scss';
+
+header {
+	position: relative;
+	z-index: 1;
+
+	.topbar {
+		padding: 8px 0;
+		background-color: $primary-color;
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.lang-options {
+				color: #fff;
+			}
+		}
+	}
+}

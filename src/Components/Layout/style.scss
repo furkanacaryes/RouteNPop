@@ -1,40 +1,17 @@
-@import '../../Styles/variables.scss';
-
 .Layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 
-    header {
-        position: relative;
-        z-index: 1;
+	main {
+		flex: 1;
 
-        .topbar {
-            padding: 8px 0;
-            background-color: $primary-color;
-        
-            .container {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-        
-                .lang-options {
-                    color: #fff;
-                }
-            }
-        }
-    }
+		> [role='group'] {
+			height: 100%;
 
-
-    main {
-        flex: 1;
-
-        > [role="group"] {
-            height: 100%;
-
-            > section {
-                min-height: 100%;
-            }
-        }
-    }
+			> section {
+				min-height: 100%;
+			}
+		}
+	}
 }
