@@ -47,12 +47,18 @@ class Note extends React.Component {
 		splittedText.map((partialText, i) => (
 			<div key={i} className="partial-text">
 				{partialText}
-				<div
-					className="foot-note"
-					onClick={({ currentTarget: t }) => this.handleClick(t, i)}
-				>
-					<div className={this.getStatefulClass(i)}>{notes[i]}</div>
-				</div>
+				{notes[i] && (
+					<div
+						className="foot-note"
+						onClick={({ currentTarget: t }) =>
+							this.handleClick(t, i)
+						}
+					>
+						<div className={this.getStatefulClass(i)}>
+							{notes[i]}
+						</div>
+					</div>
+				)}
 			</div>
 		));
 
