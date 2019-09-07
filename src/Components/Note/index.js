@@ -5,20 +5,34 @@ class Note extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			note: '',
-		};
+		this.state = {};
 	}
 
+	handleOutsideClick = ({ target }) => {
+		const { activeNoteRef } = this.state;
+
+		if (activeNoteRef && !activeNoteRef.contains(target)) {
+			this.setState({
+				activeNote: null,
+				activeNoteRef: null,
+			});
+		}
+
+		console.log('Clicked!', target, this.state.activeNoteRef);
+	};
+
 	componentDidMount() {
-        
-    }
+		document.addEventListener('click', this.handleOutsideClick);
+	}
 
-	footNoteRef = React.createRef();
+	componentWillUnmount() {
+		document.removeEventListener('click', this.handleOutsideClick);
+	}
 
-	handleClick = noteIndex =>
+	handleClick = (target, noteIndex) =>
 		this.setState({
 			activeNote: noteIndex,
+			activeNoteRef: target,
 		});
 
 	getStatefulClass = noteIndex =>
@@ -35,8 +49,7 @@ class Note extends React.Component {
 				{partialText}
 				<div
 					className="foot-note"
-					ref={this.footNoteRef}
-					onClick={() => this.handleClick(i)}
+					onClick={({ currentTarget: t }) => this.handleClick(t, i)}
 				>
 					<div className={this.getStatefulClass(i)}>{notes[i]}</div>
 				</div>
