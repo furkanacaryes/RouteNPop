@@ -2,6 +2,7 @@ import React from 'react';
 import './style.scss';
 import Nav from '../Nav';
 import Logo from '../../Assets/Logo.png';
+import { ReactComponent as MenuIcon } from '../../Assets/menu.svg';
 
 const Header = () => {
 	return (
@@ -11,7 +12,12 @@ const Header = () => {
 					<div className="brand">
 						<img src={Logo} alt="SmartOver Logo"></img>
 					</div>
+
 					<div className="lang-options">TR | EN</div>
+
+					<div className="menu-toggle">
+						<MenuIcon fill="#fff" />
+					</div>
 				</div>
 			</div>
 

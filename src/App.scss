@@ -3,6 +3,7 @@
 @import './Styles/fonts.scss';
 @import './Styles/variables.scss';
 @import './Styles/mixins.scss';
+@import './Styles/responsive.scss';
 
 body {
 	margin: 0;
@@ -11,8 +12,7 @@ body {
 }
 
 .container {
-	width: 960px;
-	margin: 0 auto;
+	margin: 0 16px;
 }
 
 .flex-center {

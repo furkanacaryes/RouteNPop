@@ -1,0 +1,27 @@
+#root {
+
+    @media (min-width: 576px) { }
+    
+    
+    @media (min-width: 768px) {
+    
+        .menu-toggle {
+            display: none;
+        }
+
+        .lang-options {
+            display: block;
+        }
+    }
+    
+    
+    @media (min-width: 992px) {
+    
+        .container {
+            width: 960px;
+        }
+    }
+    
+    
+    @media (min-width: 1200px) { }
+}
