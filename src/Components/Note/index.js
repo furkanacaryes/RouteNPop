@@ -40,7 +40,7 @@ class Note extends React.Component {
 		splittedText &&
 		splittedText.map((partialText, i) => (
 			<div key={i} className="partial-text">
-				{partialText}
+				<div className="partial-text__text">{partialText}</div>
 				{notes[i] && (
 					<div
 						className={`foot-note ${this.isNoteActive(i)}`}

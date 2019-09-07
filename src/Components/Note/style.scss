@@ -7,6 +7,10 @@
 	.partial-text {
 		display: flex;
 
+		&__text {
+			white-space: pre;
+		}
+
 		.foot-note {
 			position: relative;
 

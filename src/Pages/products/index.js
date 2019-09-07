@@ -20,10 +20,7 @@ const fetchNote = () =>
 	Promise.resolve(apiResponse);
 
 const alignNoteIndexes = (text, notes) =>
-	text.match(FOOTNOTE_REGEXP).map(placeholder => {
-		const noteIndex = placeholder[1]; // '[', 'here', ']'
-		return notes[noteIndex];
-	});
+	text.match(FOOTNOTE_REGEXP).map(placeholder => notes[placeholder[1]]);
 
 const prepareNote = ({ text, notes }) => ({
 	splittedText: text.split(FOOTNOTE_REGEXP),
@@ -38,7 +35,7 @@ const Products = () => {
 
 	useEffect(() => {
 		getInitialProps();
-	}, [note.splittedText]);
+	}, [note]);
 
 	return (
 		<section className="Products flex-center">
