@@ -1,24 +1,14 @@
 @import-normalize;
 
-@font-face {
-	font-family: 'SourceSansProRegular';
-	src: local('SourceSansPro'),
-		url(./Fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'SourceSansProBold';
-	src: local('SourceSansPro'),
-		url(./Fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
-}
+@import './Styles/fonts.scss';
+@import './Styles/variables.scss';
+@import './Styles/mixins.scss';
 
 body {
 	margin: 0;
 	font-family: 'SourceSansProRegular';
 	font-weight: 400;
 }
-
-// Application-Wide Global Classes
 
 .container {
 	width: 960px;
@@ -35,5 +25,5 @@ body {
 	padding: 16px;
 	background-color: #fff;
 	border-radius: 4px;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	@include box-shadow-03;
 }

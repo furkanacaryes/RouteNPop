@@ -1,50 +1,46 @@
-
 .MainPage {
 
-    .hero {
-        width: 100%;
+	.hero {
+		width: 100%;
 
-        img {
-            width: 100%;
-        }
-    }
+		img {
+			width: 100%;
+		}
+	}
 
-    .features {
-        // margin: 0 -16px;
-        
-        .container {
-            display: flex;
-            justify-content: space-between;
-        }
+	.features {
 
-        &__one {
-            // width: calc(100% / 3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 16px 16px 64px;
-            box-sizing: border-box;
+		.container {
+			display: flex;
+			justify-content: space-between;
+		}
 
-            &__image {
-                width: 128px;
-                height: 128px;
-                background-color: #29d;
-                border-radius: 50%;
-                overflow: hidden;
+		&__one {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 16px 16px 64px;
+			box-sizing: border-box;
 
-                img {
-                    width: 100%;
-                }
-            }
+			&__image {
+				width: 128px;
+				height: 128px;
+				border-radius: 50%;
+				overflow: hidden;
 
-            &__heading {
-                font-size: 32px;
-                margin: 16px 0;
-            }
+				img {
+					width: 100%;
+				}
+			}
 
-            &__description {
-                margin: 0;
-            }
-        }
-    }
+			&__heading {
+				font-size: 32px;
+				margin: 16px 0;
+			}
+
+			&__description {
+				margin: 0;
+			}
+		}
+	}
 }

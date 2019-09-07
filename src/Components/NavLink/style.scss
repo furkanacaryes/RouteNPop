@@ -1,3 +1,6 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/mixins.scss';
+
 .nav-link {
 	position: relative;
 	padding: 16px 24px;
@@ -5,12 +8,12 @@
 	a {
 		text-decoration: none;
 		font-weight: bold;
-		color: rgba(14, 39, 59, 0.5);
+		color: $primary-color-translucent;
 		transition: color 0.2s ease;
 
 		&:hover,
 		&.active {
-			color: rgba(14, 39, 59, 1);
+			color: $primary-color;
 		}
 	}
 
@@ -44,7 +47,7 @@
 		&__inner {
 			padding: 8px 0;
 			background-color: #fff;
-			box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+			@include box-shadow-03;
 
 			.nav-link {
 				padding: 16px;
@@ -56,7 +59,7 @@
 
 					&:hover,
 					&.active {
-						border-color: #0076d5;
+						border-color: $secondary-color;
 					}
 				}
 			}

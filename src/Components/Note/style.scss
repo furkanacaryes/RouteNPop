@@ -1,3 +1,5 @@
+@import '../../Styles/variables.scss';
+
 .Note {
 	display: flex;
 	padding: 32px;
@@ -31,7 +33,7 @@
 
 				&::before {
 					transform: scale(1.5);
-					color: #0076d5;
+					color: $secondary-color;
 				}
 
 				.pop-over {

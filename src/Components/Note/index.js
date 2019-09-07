@@ -33,13 +33,6 @@ class Note extends React.Component {
 			activeNoteRef: target,
 		});
 
-	// getStatefulClass = noteIndex =>
-	// 	[
-	// 		'pop-over',
-	// 		'shadow-radius-box',
-	// 		this.state.activeNote === noteIndex ? 'active' : '',
-	// 	].join(' ');
-
 	isNoteActive = noteIndex =>
 		this.state.activeNote === noteIndex ? 'active' : '';
 
