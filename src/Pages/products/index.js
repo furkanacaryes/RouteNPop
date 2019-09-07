@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import fetch from 'isomorphic-unfetch';
 import './style.scss';
+import bg from '../../Assets/products.png';
+import bg2x from '../../Assets/products@2x.png';
 import Note from '../../Components/Note';
 
 const apiResponse = {
@@ -39,6 +41,14 @@ const Products = () => {
 
 	return (
 		<section className="Products flex-center">
+			<div className="Products__background flex-center">
+				<img
+					srcSet={`${bg} 1x, ${bg2x} 2x`}
+					src={bg}
+					alt="Products Background"
+				/>
+			</div>
+
 			<Note {...note} />
 		</section>
 	);
