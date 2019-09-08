@@ -1,9 +1,26 @@
 @import '../../Styles/variables.scss';
 @import '../../Styles/mixins.scss';
+@import './responsive.scss';
 
 .nav-link {
 	position: relative;
 	padding: 16px 24px;
+
+	&.expanded {
+		.nav-link__expander::before {
+			transform: rotateZ(180deg);
+		}
+	}
+
+	&__expander::before {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		mask: url(../../Assets/Icons/down.svg) no-repeat center / cover;
+		background-color: #fff;
+		transition: transform 0.2s ease;
+	}
 
 	a {
 		text-decoration: none;

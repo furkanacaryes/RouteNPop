@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import Nav from '../Nav';
 import Logo from '../../Assets/Logo.png';
-import { ReactComponent as MenuIcon } from '../../Assets/menu.svg';
+import { ReactComponent as MenuIcon } from '../../Assets/Icons/menu.svg';
 
 const Header = () => {
 	return (
@@ -15,7 +15,7 @@ const Header = () => {
 
 					<div className="lang-options">TR | EN</div>
 
-					<div className="menu-toggle">
+					<div className="menu-toggle icon">
 						<MenuIcon fill="#fff" />
 					</div>
 				</div>

@@ -1,0 +1,13 @@
+#root {
+	@media (min-width: 768px) {
+		.nav-link {
+			> a {
+				display: block;
+			}
+
+			&__expander {
+				display: none;
+			}
+		}
+	}
+}

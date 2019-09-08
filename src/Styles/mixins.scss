@@ -1,3 +1,8 @@
 @mixin box-shadow-03 {
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
+
+@mixin icon32x32 {
+	width: 32px;
+	height: 32px;
+}

@@ -27,3 +27,7 @@ body {
 	border-radius: 4px;
 	@include box-shadow-03;
 }
+
+.icon {
+	@include icon32x32;
+}
