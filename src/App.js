@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Router } from '@reach/router';
 import './App.scss';
 import StateContext from './stateContext';
@@ -7,7 +7,7 @@ import MainPage from './Pages/main';
 import Products from './Pages/products';
 
 const App = () => (
-	<StateContext.Provider value={useState()}>
+	<StateContext.Provider value={useState({ menuActive: false })}>
 		<Router>
 			<Layout path="/">
 				<MainPage path="/" default></MainPage>
