@@ -8,6 +8,7 @@
 
 	&.expanded {
 		.nav-link__expander::before {
+			background-color: #fff;
 			transform: rotateZ(180deg);
 		}
 	}
@@ -20,8 +21,8 @@
 		display: block;
 		padding: 12px;
 		mask: url(../../Assets/Icons/down.svg) no-repeat center / cover;
-		background-color: #fff;
-		transition: transform 0.2s ease;
+		background-color: rgba(255, 255, 255, 0.5);
+		transition: transform 0.2s ease, background-color 0.2s ease;
 	}
 
 	a {
