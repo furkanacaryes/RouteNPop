@@ -6,19 +6,11 @@ const setIsActive = ({ isCurrent }) => ({
 	className: isCurrent ? 'active' : '',
 });
 
-const getStatefulClass = (isExpanded, hasSub) => {
-	return [
-		'nav-link',
-		// hasSub ? 'has-sub' : '',
-		isExpanded ? 'expanded' : '',
-	].join(' ');
-};
-
 const NavLink = ({ name, to, subLinks }) => {
 	const [isExpanded, setExpanded] = useState(false);
 
 	return (
-		<div className={getStatefulClass(isExpanded, !!subLinks)}>
+		<div className={`nav-link ${isExpanded ? 'expanded' : ''}`}>
 			<Link to={to} getProps={setIsActive}>
 				{name}
 			</Link>

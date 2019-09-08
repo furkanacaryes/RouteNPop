@@ -14,9 +14,11 @@
 
 	&__expander::before {
 		content: '';
+		position: absolute;
+		top: 16px;
+		left: 0;
 		display: block;
-		width: 24px;
-		height: 24px;
+		padding: 8px;
 		mask: url(../../Assets/Icons/down.svg) no-repeat center / cover;
 		background-color: #fff;
 		transition: transform 0.2s ease;
