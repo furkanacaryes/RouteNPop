@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from '@reach/router';
 import './style.scss';
+import StateContext from '../../stateContext';
 
 const setIsActive = ({ isCurrent }) => ({
 	className: isCurrent ? 'active' : '',
@@ -8,10 +9,15 @@ const setIsActive = ({ isCurrent }) => ({
 
 const NavLink = ({ name, to, subLinks }) => {
 	const [isExpanded, setExpanded] = useState(false);
+	const [, setState] = useContext(StateContext);
 
 	return (
 		<div className={`nav-link ${isExpanded ? 'expanded' : ''}`}>
-			<Link to={to} getProps={setIsActive}>
+			<Link
+				to={to}
+				getProps={setIsActive}
+				onClick={() => setState({ menuActive: false })}
+			>
 				{name}
 			</Link>
 
