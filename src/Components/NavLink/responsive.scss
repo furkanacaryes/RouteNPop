@@ -1,5 +1,47 @@
 #root {
+
+	@media (max-width: 767px) {
+		.nav-link {
+
+			a {
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 24px;
+
+				&.active {
+					color: #fff;
+
+					&::before,
+					&::after {
+						content: '';
+						position: absolute;
+						border-radius: 50%;
+						background-color: #fff;
+
+					}
+
+					&::before {
+						width: 16px;
+						height: 16px;
+						top: 0;
+						right: 8px;
+						opacity: 0.2;
+					}
+
+					&::after {
+						width: 32px;
+						height: 32px;
+						top: -24px;
+						right: -32px;
+						opacity: 0.3;
+						filter: blur(1px);
+					}
+				}
+			}
+		}
+	}
+	
 	@media (min-width: 768px) {
+		
 		.nav-link {
 			> a {
 				display: block;
